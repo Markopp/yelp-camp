@@ -21,7 +21,7 @@ mongoose.connect("mongodb://dbadmin:dbpassword@ds161475.mlab.com:61475/yelpcampp
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", ".ejs");
-seedDB();
+//seedDB();
 app.use(methodOverride("_method"));
 app.use(flash());
 
