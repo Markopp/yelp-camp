@@ -19,3 +19,34 @@ function changeBG(){
 }
   
   setInterval(changeBG, 6000);
+  
+/*
+var preloadPictures = function(pictureUrls, callback) {
+    var i,
+        j,
+        loaded = 0;
+
+    for (i = 0, j = pictureUrls.length; i < j; i++) {
+        (function (img, src) {
+            img.onload = function () {                               
+                if (++loaded == pictureUrls.length && callback) {
+                    callback();
+                }
+            };
+
+            img.onerror = function () {};
+            img.onabort = function () {};
+
+            img.src = src;
+        } (new Image(), pictureUrls[i]));
+    }
+};
+
+preloadPictures(['http://foo/picture.bar', 'http://foo/picture.bar', 'http://foo/picture.bar', 'http://foo/picture.bar'], function(){
+    console.log('a');
+});
+
+preloadPictures(['http://foo/picture.bar', 'http://foo/picture.bar', 'http://foo/picture.bar', 'http://foo/picture.bar'], function(){
+    console.log('b');
+});
+*/

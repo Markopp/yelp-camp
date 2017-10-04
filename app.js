@@ -17,7 +17,9 @@ var commentRoutes = require("./routes/comments"),
 	indexRoutes = require("./routes/index");
 	
 
+
 mongoose.connect(process.env.DATABASEURL);
+console.log(process.env.DATABASEURL);
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
@@ -59,10 +61,13 @@ passport.deserializeUser(User.deserializeUser());
 
 app.use(function(req, res, next){
 	res.locals.currentUser = req.user;
+	console.log(res.locals.currentUser);
 	res.locals.error = req.flash("error");
 	res.locals.success = req.flash("success");
 	next();
+
 });
+
 
 app.use(indexRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
